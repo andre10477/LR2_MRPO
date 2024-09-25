@@ -1,5 +1,5 @@
-﻿using System;
-using LR2_MRPO.src;
+﻿using LR2_MRPO.src;
+using System;
 
 namespace LR2_MRPO
 {
@@ -20,23 +20,36 @@ namespace LR2_MRPO
             int length = 10;                // Длина прогрессии
             int hiddenIndex = r.Next(0, length); // Индекс спрятанного элемента
 
-            int[] progression = new int[length];
+            // Генерируем геометрическую прогрессию
+            int[] progression = GenerateProgression(start, ratio, length);
 
-            // Генерация геометрической прогрессии
+            // Получаем правильный ответ
+            int correctAnswer = progression[hiddenIndex];
+
+            // Формируем вопрос с заменой скрытого элемента на ".."
+            string question = FormatProgression(progression, hiddenIndex);
+
+            return (question, correctAnswer.ToString());
+        }
+
+        // Метод для генерации геометрической прогрессии
+        private int[] GenerateProgression(int start, int ratio, int length)
+        {
+            int[] progression = new int[length];
             for (int i = 0; i < length; i++)
             {
                 progression[i] = start * (int)Math.Pow(ratio, i);
             }
+            return progression;
+        }
 
-            // Спрятанный элемент
-            int correctAnswer = progression[hiddenIndex];
-            progression[hiddenIndex] = -1; // Заменяем на ..
-
-            // Формируем вопрос
+        // Метод для формирования строки вопроса
+        private string FormatProgression(int[] progression, int hiddenIndex)
+        {
             string question = "";
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < progression.Length; i++)
             {
-                if (progression[i] == -1)
+                if (i == hiddenIndex)
                 {
                     question += ".. ";
                 }
@@ -45,9 +58,7 @@ namespace LR2_MRPO
                     question += $"{progression[i]} ";
                 }
             }
-
-            // Возвращаем вопрос и правильный ответ
-            return (question.Trim(), correctAnswer.ToString());
+            return question.Trim();
         }
     }
 }
