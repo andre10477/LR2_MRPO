@@ -2,7 +2,7 @@
 
 namespace LR2_MRPO
 {
-    internal class Program
+    internal class BrainGames
     {
         static void Main(string[] args)
         {
