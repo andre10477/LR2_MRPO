@@ -6,14 +6,17 @@ namespace LR2_MRPO
     {
         static void Main(string[] args)
         {
+            // Вызов приветствия и ввода имени
             string userName = CLI.GreetUser();
-
+            // Выбор игры
             Console.WriteLine("Choose game:\n" +
                 "1. Smallest common multiple\n" +
                 "2. Geometric progression\n");
 
+            //Ввод игры
             int game = int.Parse(Console.ReadLine());
 
+            //Выбор игры, условие
             if (game == 1)
             {
                 CSM csm = new();

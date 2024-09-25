@@ -4,10 +4,12 @@ namespace LR2_MRPO.src
 {
     internal class GameEngine
     {
+        //Метод запуска игр
         public static void RunGame(string gameName, Func<(string, string)> generateRound, string userName)
         {
             Console.WriteLine($"Welcome to {gameName}!");
 
+            //Раунды
             int roundCount = 3;
             for (int i = 0; i < roundCount; i++)
             {
@@ -17,6 +19,7 @@ namespace LR2_MRPO.src
                 Console.Write("Your answer: ");
                 string userAnswer = Console.ReadLine();
 
+                //Условие - ответ верен или не верен
                 if (userAnswer == correctAnswer)
                 {
                     Console.WriteLine("Correct!");
