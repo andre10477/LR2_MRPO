@@ -14,7 +14,7 @@ namespace LR2_MRPO
                 "2. Geometric progression\n");
 
             //Ввод игры
-            int game = int.Parse(Console.ReadLine());
+            int game = Convert.ToInt32(Console.ReadLine());
 
             //Выбор игры, условие
             if (game == 1)

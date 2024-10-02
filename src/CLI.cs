@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LR2_MRPO
+﻿namespace LR2_MRPO
 {
-    internal class CLI
+    public static class CLI
     {
         public static string GreetUser()
         {
-            //Приветствие
             Console.WriteLine("Welcome to the Brain Games!");
             Console.Write("May I have your name? ");
-            
-            //Ввод имени
-            string name = Console.ReadLine();
-            
-            //Вывод имени
-            Console.WriteLine("Hello, {0}", name);
+
+            // Проверка на null
+            string? name = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                // Если имя не введено, используем значение по умолчанию
+                name = "Player";
+            }
+
+            Console.WriteLine($"Hello {name}!");
             return name;
         }
     }
