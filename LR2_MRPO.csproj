@@ -9,11 +9,12 @@
 
   <ItemGroup>
     <Compile Remove="src - Копировать\**" />
-    <Compile Remove="Новая папка\**" />
     <EmbeddedResource Remove="src - Копировать\**" />
-    <EmbeddedResource Remove="Новая папка\**" />
     <None Remove="src - Копировать\**" />
-    <None Remove="Новая папка\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="bin\BrainGames.cs" />
   </ItemGroup>
 
   <ItemGroup>
