@@ -21,22 +21,27 @@ namespace LR2_MRPO.src
                 if (string.IsNullOrEmpty(userAnswer))
                 {
                     Console.WriteLine($"Invalid input. Please provide an answer.");
-                    return;  
-                }
-                // Условие - ответ верен или не верен
-                if (userAnswer == correctAnswer)
-                {
-                    Console.WriteLine("Correct!");
-                }
-                else
-                {
-                    Console.WriteLine($"'{userAnswer}' is wrong answer ;(. Correct answer was '{correctAnswer}'.");
-                    Console.WriteLine($"Let's try again, {userName}!");
                     return;
                 }
+                CheckAnswer(userAnswer, correctAnswer, userName);
             }
 
             Console.WriteLine($"Congratulations, {userName}!");
+        }
+        // Метод проверки ответа на правильно/неправильно
+        private static void CheckAnswer(string userAnswer, string correctAnswer, string userName)
+        {            
+            // Условие - ответ верен или не верен
+            if (userAnswer == correctAnswer)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine($"'{userAnswer}' is wrong answer ;(. Correct answer was '{correctAnswer}'.");
+                Console.WriteLine($"Let's try again, {userName}!");
+                return;
+            }
         }
     }
 }
