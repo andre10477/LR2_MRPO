@@ -1,4 +1,5 @@
-﻿using LR2_MRPO.src.games;
+﻿using LR2_MRPO.src;
+using LR2_MRPO.src.games;
 
 namespace LR2_MRPO.bin
 {
@@ -21,11 +22,15 @@ namespace LR2_MRPO.bin
             {
                 CSM csm = new();
                 csm.Main(userName);  // Передаем имя пользователя в игру
+                // Запуск игры через движок
+                GameEngine.RunGame("Geometric Progression", csm.GenerateRound, userName);
             }
             else if (game == 2)
             {
                 GeomProg gp = new();
                 gp.Main(userName);  // Передаем имя пользователя в игру
+                // Запуск игры через движок
+                GameEngine.RunGame("Geometric Progression", gp.GenerateRound, userName);
             }
         }
     }

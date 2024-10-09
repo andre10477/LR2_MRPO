@@ -7,12 +7,11 @@ namespace LR2_MRPO
     {
         public void Main(string userName)
         {
-            // Запуск игры через движок
-            GameEngine.RunGame("Geometric Progression", GenerateRound, userName);
+            
         }
 
         // Метод, генерирующий вопрос и правильный ответ
-        private (string, string) GenerateRound()
+        public (string, string) GenerateRound()
         {
             Random r = new Random();
             int start = r.Next(1, 10);      // Начальное число прогрессии

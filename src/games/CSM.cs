@@ -7,12 +7,11 @@ namespace LR2_MRPO.src.games
     {
         public void Main(string userName)
         {
-            // Запуск игры через движок
-            GameEngine.RunGame("Smallest Common Multiple", GenerateRound, userName);
+            
         }
 
         // Метод, генерирующий вопрос и правильный ответ
-        private (string, string) GenerateRound()
+        public (string, string) GenerateRound()
         {
             Random r = new Random();
             int num1 = r.Next(1, 100);
