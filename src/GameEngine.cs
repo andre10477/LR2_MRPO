@@ -14,19 +14,15 @@ namespace LR2_MRPO.src
             for (int i = 0; i < roundCount; i++)
             {
                 var (question, correctAnswer) = generateRound();
-
                 Console.WriteLine($"Question: {question}");
                 Console.Write("Your answer: ");
-
                 // Чтение ответа пользователя с проверкой на null
                 string? userAnswer = Console.ReadLine();
-
                 if (string.IsNullOrEmpty(userAnswer))
                 {
                     Console.WriteLine($"Invalid input. Please provide an answer.");
                     return;  
                 }
-
                 // Условие - ответ верен или не верен
                 if (userAnswer == correctAnswer)
                 {
